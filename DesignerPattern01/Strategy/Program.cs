@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace DesignerPattern01
+﻿namespace DesignerPattern01
 {
 	public class Program
 	{
@@ -8,12 +6,13 @@ namespace DesignerPattern01
 		{
 			Imposto iss = new ISS();
 			Imposto icsm = new ICMS();
+			Imposto icc = new ICCC();
 
 			Orcamento orcamento = new Orcamento(500);
 
 			new CalculadorDeImposto().RealizaCalculo(orcamento, iss);
 			new CalculadorDeImposto().RealizaCalculo(orcamento, icsm);
-
+			new CalculadorDeImposto().RealizaCalculo(orcamento, icc);
 		}
 	}
 }
