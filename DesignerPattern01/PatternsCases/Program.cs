@@ -52,7 +52,6 @@ namespace DesignerPattern01
 			requisicoes.EnviarRequisicoes(requisicao, contaRequisicao);
 
 			//Tempalte method
-
 			Imposto ikcv = new IKCV();
 		}
 	}

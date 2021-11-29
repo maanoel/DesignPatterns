@@ -23,7 +23,12 @@ namespace DesignerPattern01
 
 		private bool TemItemMaiorQue100Reais(Orcamento orcamento)
 		{
-			throw new NotImplementedException();
+			foreach(Item item in orcamento.Itens)
+			{
+				if(item.Valor > 100) return true;
+			}
+
+			return false;
 		}
 
 	}
