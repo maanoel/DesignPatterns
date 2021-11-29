@@ -1,4 +1,4 @@
-﻿namespace DesignerPattern01.PatternsCases.Calculos.CalculadorDeImposto
+﻿namespace DesignerPattern01
 {
 	public class ICPP : TemplateDeImpostoCondicional
 	{

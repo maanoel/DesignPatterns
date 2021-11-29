@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using System;
 
-namespace DesignerPattern01.PatternsCases.Calculos.CalculadorDeImposto
+
+namespace DesignerPattern01
 {
 	public class IKCV : TemplateDeImpostoCondicional
 	{

@@ -50,6 +50,10 @@ namespace DesignerPattern01
 			Conta contaRequisicao = new Conta("Vitor", 500);
 
 			requisicoes.EnviarRequisicoes(requisicao, contaRequisicao);
+
+			//Tempalte method
+
+			Imposto ikcv = new IKCV();
 		}
 	}
 }
