@@ -11,6 +11,16 @@ namespace DesignerPattern01.PatternsCases.ChainOfResponsibility
 	{
 		public IResposta OutraResposta { get; set; }
 
+		public RespostaEmPorcento(IResposta resposta)
+		{
+			OutraResposta = resposta;
+		}
+
+		public RespostaEmPorcento()
+		{
+			OutraResposta = null;
+		}
+
 		public void Responde(Requisicao req, Conta conta)
 		{
 			if(req.Formato == Formato.PORCENTO)
@@ -22,6 +32,7 @@ namespace DesignerPattern01.PatternsCases.ChainOfResponsibility
 				OutraResposta.Responde(req, conta);
 			}
 		}
+
 	}
 }
 
