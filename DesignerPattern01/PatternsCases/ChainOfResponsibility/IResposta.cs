@@ -1,4 +1,6 @@
-﻿namespace DesignerPattern01.PatternsCases.ChainOfResponsibility
+﻿using DesignerPattern01.PatternsCases.ChainOfResponsibility;
+
+namespace DesignerPattern01
 {
 	public interface IResposta
 	{

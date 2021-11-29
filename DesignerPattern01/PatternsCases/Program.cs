@@ -1,5 +1,4 @@
-﻿using DesignerPattern01.PatternsCases.ChainOfResponsibility;
-using DesignerPattern01.Strategy.Calculos.CalculadorDeDescontos;
+﻿using DesignerPattern01.Strategy.Calculos.CalculadorDeDescontos;
 using DesignerPattern01.Strategy.RealizadorDeInvestimentos;
 
 namespace DesignerPattern01
@@ -51,7 +50,7 @@ namespace DesignerPattern01
 
 			requisicoes.EnviarRequisicoes(requisicao, contaRequisicao);
 
-			//Tempalte method
+			//Tempalte method	
 			Imposto ikcv = new IKCV();
 		}
 	}
