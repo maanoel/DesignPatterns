@@ -4,7 +4,7 @@ namespace DesignerPattern01
 {
 	public class ICCC : Imposto
 	{
-		public double Calcular(Orcamento orcamento)
+		public override double Calcular(Orcamento orcamento)
 		{
 			if(orcamento.Valor < 1000)
 				return orcamento.Valor * 0.05;

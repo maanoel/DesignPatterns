@@ -1,10 +1,22 @@
-﻿namespace DesignerPattern01
+﻿using System;
+
+namespace DesignerPattern01
 {
 	public class ISS : Imposto
 	{
-		public double Calcular(Orcamento orcamento)
+		public ISS(Imposto outroImposto) : base(outroImposto)
 		{
-			return orcamento.Valor * 0.6;
+
+		}
+
+		public ISS(): base()
+		{
+
+		}
+
+		public override double Calcular(Orcamento orcamento)
+		{
+			return orcamento.Valor * 0.6  + CalculoDoOutroImposto(orcamento);
 		}
 	}
 }

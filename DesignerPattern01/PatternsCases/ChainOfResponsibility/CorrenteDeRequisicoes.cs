@@ -1,5 +1,4 @@
-﻿using DesignerPattern01.PatternsCases.ChainOfResponsibility;
-
+﻿
 namespace DesignerPattern01
 {
 	public class CorrenteDeRequisicoes

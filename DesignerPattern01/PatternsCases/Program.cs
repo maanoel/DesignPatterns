@@ -1,5 +1,6 @@
 ﻿using DesignerPattern01.Strategy.Calculos.CalculadorDeDescontos;
 using DesignerPattern01.Strategy.RealizadorDeInvestimentos;
+using System;
 
 namespace DesignerPattern01
 {
@@ -52,6 +53,21 @@ namespace DesignerPattern01
 
 			//Tempalte method	
 			Imposto ikcv = new IKCV();
+
+			//Decorator 
+
+			//Utilizo o decorator quando é preciso compor a regra de uma classe com outro
+			//Para decorar uma classe com a outro eu posos passar ela por parâmetro
+
+			Imposto imposto = new ISS(new ICMS(new IKCV()));
+
+			Orcamento orcamentoTemplate = new Orcamento(500);
+
+			double valor = imposto.Calcular(orcamentoTemplate);
+
+			Console.WriteLine("TESTE VALOR:  " + valor);
+
+
 		}
 	}
 }

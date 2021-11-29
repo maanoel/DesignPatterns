@@ -13,12 +13,12 @@ namespace DesignerPattern01
 
 		public override double MaximaTaxacao(Orcamento orcamento)
 		{
-			return orcamento.Valor * 0.1;
+			return orcamento.Valor * 0.2;
 		}
 
 		public override double MinimaTaxacao(Orcamento orcamento)
 		{
-			throw new NotImplementedException();
+			return orcamento.Valor * 0.1;
 		}
 
 		private bool TemItemMaiorQue100Reais(Orcamento orcamento)
