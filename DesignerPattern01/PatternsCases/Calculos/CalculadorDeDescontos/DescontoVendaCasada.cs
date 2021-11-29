@@ -30,4 +30,4 @@ namespace DesignerPattern01.Strategy.Calculos.CalculadorDeDescontos
     }
   }
 }
-}
+

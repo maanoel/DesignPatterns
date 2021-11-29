@@ -1,4 +1,5 @@
-﻿using DesignerPattern01.Strategy.Calculos.CalculadorDeDescontos;
+﻿using DesignerPattern01.PatternsCases.ChainOfResponsibility;
+using DesignerPattern01.Strategy.Calculos.CalculadorDeDescontos;
 using DesignerPattern01.Strategy.RealizadorDeInvestimentos;
 
 namespace DesignerPattern01
@@ -43,6 +44,12 @@ namespace DesignerPattern01
 
 
 			calculador.Calcula(orcamentoDesconto);
+
+			CorrenteDeRequisicoes requisicoes = new CorrenteDeRequisicoes();
+			Requisicao requisicao = new Requisicao(Formato.XML);
+			Conta contaRequisicao = new Conta("Vitor", 500);
+
+			requisicoes.EnviarRequisicoes(requisicao, contaRequisicao);
 		}
 	}
 }
