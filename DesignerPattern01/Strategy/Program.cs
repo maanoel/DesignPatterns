@@ -1,4 +1,5 @@
-﻿using DesignerPattern01.Strategy.RealizadorDeInvestimentos;
+﻿using DesignerPattern01.Strategy.Calculos.CalculadorDeDescontos;
+using DesignerPattern01.Strategy.RealizadorDeInvestimentos;
 
 namespace DesignerPattern01
 {
@@ -26,6 +27,22 @@ namespace DesignerPattern01
 			conta.Deposita(1900);
 
 			new RealizadorDeInvestimentos().Calcular(conta, arrojador);
+
+			///Chain of Responsibility
+			CalculadorDeDescontos calculador = new CalculadorDeDescontos();
+
+			Orcamento orcamentoDesconto = new Orcamento(500);
+			orcamentoDesconto.AdicionarItem(new Item("Caneta", 1500));
+			orcamentoDesconto.AdicionarItem(new Item("Lapis", 5100));
+			orcamentoDesconto.AdicionarItem(new Item("Lapis1", 5100));
+			orcamentoDesconto.AdicionarItem(new Item("Lapis2", 500));
+			orcamentoDesconto.AdicionarItem(new Item("Lapis", 500));
+			orcamentoDesconto.AdicionarItem(new Item("Lapis", 100));
+			orcamentoDesconto.AdicionarItem(new Item("Lapis", 10));
+			orcamentoDesconto.AdicionarItem(new Item("Lapis", 100));
+
+
+			calculador.Calcula(orcamentoDesconto);
 		}
 	}
 }
