@@ -96,6 +96,34 @@ namespace DesignerPattern01
 			reforma.AplicaDescontoExtra();
 
 			Console.WriteLine("Valor orcamento agora" + reforma.Valor);
+
+			//Criando o builder, interface fluent, method chain.
+
+			CriadorDeNotaFiscal builder = new CriadorDeNotaFiscal();
+			builder.Com(
+				new ItemDaNota("Tv Samsumg QLD 55 polegadas", 3000)
+			);
+
+			builder.Com(
+				new ItemDaNota("Panela de pressão elétrica", 499)
+			);
+
+			builder
+			.ParaEmpresa("Code lab")
+			.NaDataAtual()
+			.ComCnpj("23.456.787/001-12")
+			.ComObs("Qualquer obs");
+
+			//Criando um observer, ele será disparado após a ação de gerar nota, através de uma interface ela é chamado 
+			//por dentro do builder
+			builder.AdicionaAcao(new NotaFiscalDAO());
+			builder.AdicionaAcao(new EnviadorDeEmail());
+			builder.AdicionaAcao(new EnviadorDeSMS());
+
+			NotaFiscal nf = builder.Constroi();
+
+			Console.WriteLine(nf.ValorBruto);
+			Console.WriteLine(nf.Impostos);
 		}
 	}
 }
