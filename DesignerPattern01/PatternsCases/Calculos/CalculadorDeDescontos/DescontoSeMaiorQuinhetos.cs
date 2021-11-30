@@ -1,5 +1,4 @@
-﻿namespace DesignerPattern01.Strategy.Calculos.CalculadorDeDescontos
-{
+﻿namespace DesignerPattern01
 	public class DescontoSeMaiorQuinhetos : IDesconto
 	{
 		public IDesconto Proximo { get;  set; }

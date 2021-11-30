@@ -1,4 +1,4 @@
-﻿namespace DesignerPattern01.Strategy.Calculos.CalculadorDeDescontos
+﻿namespace DesignerPattern01
 {
 	public class SemDesconto : IDesconto
 	{

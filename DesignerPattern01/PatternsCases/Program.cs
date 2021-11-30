@@ -1,5 +1,4 @@
-﻿using DesignerPattern01.Strategy.Calculos.CalculadorDeDescontos;
-using DesignerPattern01.Strategy.RealizadorDeInvestimentos;
+﻿using DesignerPattern01.Strategy.RealizadorDeInvestimentos;
 using System;
 using System.Collections.Generic;
 
@@ -78,6 +77,11 @@ namespace DesignerPattern01
 			var contas = filtros.Filtra(lista);
 
 			Console.WriteLine("Contas filtradas: " + contas.Count);
+
+			//
+
+			Orcamento reforma = new Orcamento(500, new Aprovado());
+			reforma.AplicaDescontoExtra();
 		}
 	}
 }

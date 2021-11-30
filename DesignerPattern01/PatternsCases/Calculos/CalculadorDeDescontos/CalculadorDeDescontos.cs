@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DesignerPattern01.Strategy.Calculos.CalculadorDeDescontos
+namespace DesignerPattern01
 {
 	public class CalculadorDeDescontos 
 	{
