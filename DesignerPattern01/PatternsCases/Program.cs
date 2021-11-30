@@ -78,7 +78,7 @@ namespace DesignerPattern01
 
 			Console.WriteLine("Contas filtradas: " + contas.Count);
 
-			//
+			//Padrão state, para tratar problemas de estados de objetos
 
 			Orcamento reforma = new Orcamento(500, new Aprovado());
 			reforma.AplicaDescontoExtra();

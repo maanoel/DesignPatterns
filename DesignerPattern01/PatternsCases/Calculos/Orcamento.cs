@@ -4,7 +4,6 @@ namespace DesignerPattern01
 {
 	public class Orcamento
 	{
-	
 		public IEstadoDeUmOrcamento EstadoAtual { get; set; }
 
 		public double Valor { get; set; }
