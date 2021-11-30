@@ -43,7 +43,6 @@ namespace DesignerPattern01
 			orcamentoDesconto.AdicionarItem(new Item("Lapis", 10));
 			orcamentoDesconto.AdicionarItem(new Item("Lapis", 100));
 
-
 			calculador.Calcula(orcamentoDesconto);
 
 			CorrenteDeRequisicoes requisicoes = new CorrenteDeRequisicoes();
@@ -83,6 +82,8 @@ namespace DesignerPattern01
 			//Nesse exemplo foi passado o estado oorcamento para a classe EstadodeUmOrcamento
 			//Orcamento chamada EstadoDeUmOrcamento que altera o seu estado.
 
+			//
+			//"A principal situação que faz emergir o Design Pattern State é a necessidade de implementação de uma máquina de estados."
 			Orcamento reforma = new Orcamento(500, new Aprovado());
 			reforma.AplicaDescontoExtra();
 			reforma.AplicaDescontoExtra();
