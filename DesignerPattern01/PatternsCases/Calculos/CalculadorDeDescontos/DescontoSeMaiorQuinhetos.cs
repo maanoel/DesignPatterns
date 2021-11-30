@@ -1,4 +1,4 @@
-﻿namespace DesignerPattern01
+﻿namespace DesignerPattern01{ 
 	public class DescontoSeMaiorQuinhetos : IDesconto
 	{
 		public IDesconto Proximo { get;  set; }

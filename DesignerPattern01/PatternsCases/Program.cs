@@ -13,7 +13,7 @@ namespace DesignerPattern01
 			Imposto icsm = new ICMS();
 			Imposto icc = new ICCC();
 
-			Orcamento orcamento = new Orcamento(500);
+			Orcamento orcamento = new Orcamento(500, new EmAprovacao());
 
 			new CalculadorDeImposto().RealizaCalculo(orcamento, iss);
 			new CalculadorDeImposto().RealizaCalculo(orcamento, icsm);
@@ -33,7 +33,7 @@ namespace DesignerPattern01
 			//Eu utiliz o chain quando eu quero criar uma corrente de execução entre vários objetos.
 			CalculadorDeDescontos calculador = new CalculadorDeDescontos();
 
-			Orcamento orcamentoDesconto = new Orcamento(500);
+			Orcamento orcamentoDesconto = new Orcamento(500, new EmAprovacao());
 			orcamentoDesconto.AdicionarItem(new Item("Caneta", 1500));
 			orcamentoDesconto.AdicionarItem(new Item("Lapis", 5100));
 			orcamentoDesconto.AdicionarItem(new Item("Lapis1", 5100));
@@ -62,7 +62,7 @@ namespace DesignerPattern01
 
 			Imposto imposto = new ISS(new ICMS(new IKCV()));
 
-			Orcamento orcamentoTemplate = new Orcamento(500);
+			Orcamento orcamentoTemplate = new Orcamento(500, new EmAprovacao());
 
 			double valor = imposto.Calcular(orcamentoTemplate);
 
@@ -79,9 +79,22 @@ namespace DesignerPattern01
 			Console.WriteLine("Contas filtradas: " + contas.Count);
 
 			//Padrão state, para tratar problemas de estados de objetos
+			//Usando o padrão state eu passo para outra classe a habildiade de alterar o estado de um objeto
+			//Nesse exemplo foi passado o estado oorcamento para a classe EstadodeUmOrcamento
+			//Orcamento chamada EstadoDeUmOrcamento que altera o seu estado.
 
 			Orcamento reforma = new Orcamento(500, new Aprovado());
 			reforma.AplicaDescontoExtra();
+			reforma.AplicaDescontoExtra();
+			reforma.AplicaDescontoExtra();
+			reforma.AplicaDescontoExtra();
+			reforma.AplicaDescontoExtra();
+			reforma.AplicaDescontoExtra();
+			reforma.AplicaDescontoExtra();
+			reforma.AplicaDescontoExtra();
+			reforma.AplicaDescontoExtra();
+
+			Console.WriteLine("Valor orcamento agora" + reforma.Valor);
 		}
 	}
 }

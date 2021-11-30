@@ -8,5 +8,20 @@ namespace DesignerPattern01
 		{
 			throw new Exception("Orcamentos reprovados não recebem desconto");
 		}
+
+		public void Aprova(Orcamento orcamento)
+		{
+			new Exception("Já reprovado");
+		}
+
+		public void Finaliza(Orcamento orcamento)
+		{
+			new Exception("Já reprovado");
+		}
+
+		public void Reprova(Orcamento orcamento)
+		{
+			new Exception("Já reprovado");
+		}
 	}
 }
