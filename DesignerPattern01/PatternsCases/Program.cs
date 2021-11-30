@@ -1,6 +1,7 @@
 ﻿using DesignerPattern01.Strategy.Calculos.CalculadorDeDescontos;
 using DesignerPattern01.Strategy.RealizadorDeInvestimentos;
 using System;
+using System.Collections.Generic;
 
 namespace DesignerPattern01
 {
@@ -69,10 +70,12 @@ namespace DesignerPattern01
 			Console.WriteLine("TESTE VALOR:  " + valor);
 
 			//Decorator com TDD
+			//FiltroDecorator filtros = new ContasMenorQue100(new ContasMaiorQueQuinhetosMil(new ContasDataAbeturaMesCorrente()));
+			FiltroDecorator filtros = new ContasMenorQue100(new ContasMaiorQueQuinhetosMil());
 
+			var contas = filtros.Filtra(new List<Conta> { new Conta("Vitor", 5000 ), new Conta("Vitor", 5000000), new Conta("Vitor", 500), new Conta("Vitor", 5) });
 
-
-
+			Console.WriteLine("Contas filtradas: " + contas.Count);
 		}
 	}
 }
