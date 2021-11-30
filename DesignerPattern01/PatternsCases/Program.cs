@@ -30,6 +30,7 @@ namespace DesignerPattern01
 			new RealizadorDeInvestimentos().Calcular(conta, arrojador);
 
 			///Chain of Responsibility
+			//Eu utiliz o chain quando eu quero criar uma corrente de execução entre vários objetos.
 			CalculadorDeDescontos calculador = new CalculadorDeDescontos();
 
 			Orcamento orcamentoDesconto = new Orcamento(500);
@@ -56,8 +57,8 @@ namespace DesignerPattern01
 
 			//Decorator 
 
-			//Utilizo o decorator quando é preciso compor a regra de uma classe com outro
-			//Para decorar uma classe com a outro eu posos passar ela por parâmetro
+			//Utilizo o decorator quando é preciso compor a regra de uma objeto outra
+			//Para decorar uma objeto com outro eu posos passar ela por parâmetro
 
 			Imposto imposto = new ISS(new ICMS(new IKCV()));
 
@@ -66,6 +67,10 @@ namespace DesignerPattern01
 			double valor = imposto.Calcular(orcamentoTemplate);
 
 			Console.WriteLine("TESTE VALOR:  " + valor);
+
+			//Decorator com TDD
+
+
 
 
 		}
